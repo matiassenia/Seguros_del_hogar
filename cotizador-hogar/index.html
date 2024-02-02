@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop - Cotizador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js"></script>
+</head>
+<body>
+    <h1 class="center separate">Seguros del hogar</h1>
+    <div class="div-quote">
+        <h2 class="center separate">Completa los datos solicitados</h2>
+        <label for="propiedad">Selecciona el tipo de propiedad</label>
+        <select id="propiedad">
+            <option selected disabled>...</option>
+            <option value="1.009">Casa</option>
+            <option value="1.005">P.H.</option>
+            <option value="1.002">Dto. Edificio</option>
+            <option value="1.019">Barrio Privado</option>
+            <option value="1.039">Oficina</option>
+            <option value="1.041">Local comercial</option>
+            <option value="1.092">Depósito logística</option>
+        </select>
+        <label for="ubicacion">Selecciona su ubicación</label>
+        <select id="ubicacion">
+            <option selected disabled>...</option>
+            <option value="1.013">CABA</option>
+            <option value="1.004">Tandil</option>
+            <option value="1.029">Costa Atlántica</option>
+            <option value="1.000">Patagonia Argentina</option>
+        </select>
+        <label for="metros2">Ingresa los Metros cuadrados:</label>
+        <input type="number" id="metros2" value="20" min="20" max="500">
+        <div class="center separate">
+            <button class="button button-outline">Cotizar</button>
+        </div>
+        <div class="center separate">
+            <p class="price">Precio estimado: $ <span id="valorPoliza">0.00</span>
+        </div>
+    </div>
+</body>
+</html>
