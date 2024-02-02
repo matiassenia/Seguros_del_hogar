@@ -53,11 +53,11 @@ if (fm > 1.000 && !isNaN(metrosCuadrados)) {
     console.warn('Hubo un error en el ingreso de datos.');
 }
 
-let propiedad, ubicacion, costoM2;
+let propiedad, ubicacion, metros2;
 
 // Corregir la comparación de tipo de vivienda
     if (tipoDeVivienda !== '') {
-        for (propiedad of datosPropiedad) {
+        for (propiedad of datosPropiedad("/")) {
             if (propiedad.tipo === tipoDeVivienda) {
                 propiedad = propiedad
                 break
@@ -78,8 +78,9 @@ let tipoUbicacion = prompt("Selecciona la ubicación de la vivienda: \n" +
         }
     }
 
+// Verifica si todas las variables necesarias están definidas y si metros2 es un número.
 if (propiedad && ubicacion && parseInt(metros2)) {
-    let resultado = propiedad.factor * ubicacion.factor * metros2 * costoM2
+    let resultado = propiedad.factor * ubicacion.factor * metros2 * costoBaseM2;
     console.log("Resultado de la Póliza: $ " + resultado)
 } else {
     console.warn("Hubo un error en los datos ingresados.")
