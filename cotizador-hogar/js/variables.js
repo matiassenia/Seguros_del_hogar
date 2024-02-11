@@ -1,3 +1,4 @@
+
 const datosPropiedad = [{tipo: 'Casa', factor: 1.009},
                         {tipo: 'P.H.', factor: 1.005},
                         {tipo: 'Depto. Edificio', factor: 1.002},
