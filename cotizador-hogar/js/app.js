@@ -1,11 +1,11 @@
-const selectPropiedad = document.querySelector("select#propiedad")
-const selectUbicacion = document.querySelector("select#ubicacion")
-const inputMetros2 = document.querySelector("input#metros2")
+const selectPropiedad = document.querySelector("#propiedad")
+const selectUbicacion = document.querySelector("#ubicacion")
+const inputMetros2 = document.querySelector("#metros2")
 const btnCotizar = document.querySelector("button.button.button-outline")
-const divPrincipal = document.querySelector("div.div-quote")
-const spanPoliza = document.querySelector("span#valorPoliza")
+const divPrincipal = document.querySelector(".div-quote")
+const spanPoliza = document.querySelector("#valorPoliza")
 
-// Definición de las variables de factor multiplicador (fm) para el tipo de vivienda y ubicación.
+// Definición de las variables de factor multiplicador(fm) para el tipo de vivienda y ubicación.
 let fmPropiedad;
 let fmUbicacion; 
 
@@ -13,7 +13,7 @@ let fmUbicacion;
 const costoBaseM2 = 1.16;
 
 function cargarComboPropiedad() {
-    let opcionPropiedad
+    let opcionPropiedad = "" ;
     for (let propiedad of datosPropiedad) {
         opcionPropiedad += "<option>" + propiedad.tipo + "</option>"
     }
@@ -21,7 +21,7 @@ function cargarComboPropiedad() {
 }
 
 function cargarComboUbicacion() {
-    let opcionUbicacion
+    let opcionUbicacion = "";
     for (let ubicacion of datosUbicacion) {
         opcionUbicacion += "<option>" + ubicacion.tipo + "</option>"
     }
@@ -53,18 +53,19 @@ function obtenerfmUbicacion() {
 // Verifica si todas las variables necesarias están definidas y si metros2 es un número.
 btnCotizar.onclick = function () {
     divPrincipal.classList.add("div-blocked")
-    btnCotizar.innerHTML = '<img src="images/animation.gif">'     
+    btnCotizar.innerHTML = '<img src="images/animation.gif">'  
 
-    if (obtenerfmPropiedad() && obtenerfmUbicacion() && parseInt(metros2.value)){
-        let resultado = obtenerfmPropiedad() * obtenerfmUbicacion() * parseInt(metros2.value) * costoBaseM2;
-        spanPoliza.textContent = resultado.toFixed(2)
-        console.log("Resultado de la Póliza: $ " + resultado.toFixed(2));
-    } else {
-        console.warn("Hubo un error en los datos ingresados.")
-    }
-    divPrincipal.classList.remove("div-blocked")
-    btnCotizar.textContent = 'cotizar'
-
+    setTimeout (() => {
+        if (obtenerfmPropiedad() && obtenerfmUbicacion() && parseInt(metros2.value)){
+            let resultado = obtenerfmPropiedad() * obtenerfmUbicacion() * parseInt(metros2.value) * costoBaseM2;
+            spanPoliza.textContent = resultado.toFixed(2)
+            console.log("Resultado de la Póliza: $ " + resultado.toFixed(2));
+        } else {
+            console.warn("Hubo un error en los datos ingresados.")
+        }
+        divPrincipal.classList.remove("div-blocked")
+        btnCotizar.textContent = 'cotizar'
+    }, 1000)
 }
 
 cargarComboPropiedad()
