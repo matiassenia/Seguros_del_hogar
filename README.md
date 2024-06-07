@@ -28,6 +28,6 @@ Este proyecto consiste en un cotizador de seguros de hogar, desarrollado en HTML
 3. Haz clic en el botón "Cotizar" para obtener una estimación del precio del seguro.
 
 
-Podes visitar el modelo estatico en: 
+Podes visitar el modelo en: 
 
 https://matiassenia.github.io/Seguros_del_hogar/
